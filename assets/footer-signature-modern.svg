@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="modernFooterBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050813" />
+      <stop offset="100%" stop-color="#091024" />
+    </linearGradient>
+    <linearGradient id="neonBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .mono { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; }
+  </style>
+
+  <rect width="1200" height="100" rx="14" fill="url(#modernFooterBg)" stroke="#1E293B" stroke-width="1.2" />
+  <path d="M 24 2 L 1176 2" stroke="url(#neonBeam)" stroke-width="2.5" stroke-linecap="round" />
+
+  <g transform="translate(60, 36)">
+    <circle cx="10" cy="14" r="4" fill="#00F2FE" />
+    <text x="24" y="18" class="sans" font-size="14.5" font-weight="700" fill="#F8FAFC" letter-spacing="1">
+      TABARAK HUSSAIN
+    </text>
+    <text x="175" y="18" class="mono" font-size="12" fill="#64748B">|</text>
+    <text x="195" y="18" class="mono" font-size="12" fill="#38BDF8" font-weight="600">
+      LEAD DEVSECOPS &amp; AZURE CLOUD PLATFORM ENGINEER
+    </text>
+
+    <!-- Subtitle on the right -->
+    <text x="1080" y="18" class="mono" font-size="11" fill="#94A3B8" text-anchor="end">
+      Designed for high-availability enterprise environments • 2026
+    </text>
+  </g>
+</svg>
+

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hudBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070C1A" />
+      <stop offset="100%" stop-color="#0A1226" />
+    </linearGradient>
+
+    <!-- Glowing Accents -->
+    <linearGradient id="gradCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <linearGradient id="gradEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+
+    <linearGradient id="gradIndigo" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <linearGradient id="gradRose" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#FB7185" />
+    </linearGradient>
+
+    <filter id="hudGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .mono { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; }
+    .hud-num { font-weight: 800; letter-spacing: -1px; }
+  </style>
+
+  <rect width="1200" height="140" rx="16" fill="url(#hudBg)" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- ================= CARD 1: PROVISIONING ACCELERATION ================= -->
+  <g transform="translate(16, 16)">
+    <rect width="276" height="108" rx="12" fill="#0C152B" stroke="#0284C7" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 0 12 Q 0 0 12 0 L 264 0 Q 276 0 276 12 L 276 3 Z" fill="url(#gradCyan)" />
+    
+    <g transform="translate(16, 20)">
+      <text x="0" y="28" class="sans hud-num" font-size="34" fill="url(#gradCyan)">60%</text>
+      <!-- Sparkline icon -->
+      <path d="M 170 24 L 188 12 L 204 18 L 226 4" stroke="#00F2FE" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="226" cy="4" r="3.5" fill="#00F2FE" filter="url(#hudGlow)" />
+
+      <text x="0" y="56" class="sans" font-size="13" font-weight="700" fill="#E2E8F0">Faster Cloud Provisioning</text>
+      <text x="0" y="74" class="mono" font-size="10.5" fill="#94A3B8">Modular Terraform Landing Zones</text>
+    </g>
+  </g>
+
+  <!-- ================= CARD 2: FINOPS COST SAVINGS ================= -->
+  <g transform="translate(308, 16)">
+    <rect width="276" height="108" rx="12" fill="#0C152B" stroke="#10B981" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 0 12 Q 0 0 12 0 L 264 0 Q 276 0 276 12 L 276 3 Z" fill="url(#gradEmerald)" />
+
+    <g transform="translate(16, 20)">
+      <text x="0" y="28" class="sans hud-num" font-size="34" fill="url(#gradEmerald)">40%</text>
+      <!-- Cost Down Sparkline -->
+      <path d="M 170 6 L 190 14 L 206 10 L 226 24" stroke="#10B981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="226" cy="24" r="3.5" fill="#10B981" filter="url(#hudGlow)" />
+
+      <text x="0" y="56" class="sans" font-size="13" font-weight="700" fill="#E2E8F0">Cloud Cost Slashed</text>
+      <text x="0" y="74" class="mono" font-size="10.5" fill="#94A3B8">Infracost PR Gates &amp; OpenCost</text>
+    </g>
+  </g>
+
+  <!-- ================= CARD 3: ZERO-DOWNTIME VELOCITY ================= -->
+  <g transform="translate(600, 16)">
+    <rect width="276" height="108" rx="12" fill="#0C152B" stroke="#6366F1" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 0 12 Q 0 0 12 0 L 264 0 Q 276 0 276 12 L 276 3 Z" fill="url(#gradIndigo)" />
+
+    <g transform="translate(16, 20)">
+      <text x="0" y="28" class="sans hud-num" font-size="34" fill="url(#gradIndigo)">50%</text>
+      <!-- Velocity Up Sparkline -->
+      <path d="M 170 22 L 186 16 L 204 18 L 226 6" stroke="#818CF8" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="226" cy="6" r="3.5" fill="#818CF8" filter="url(#hudGlow)" />
+
+      <text x="0" y="56" class="sans" font-size="13" font-weight="700" fill="#E2E8F0">Accelerated CI/CD Cycles</text>
+      <text x="0" y="74" class="mono" font-size="10.5" fill="#94A3B8">GitHub Actions &amp; Azure DevOps</text>
+    </g>
+  </g>
+
+  <!-- ================= CARD 4: ZERO SECRET LEAKS & ZERO DRIFT ================= -->
+  <g transform="translate(892, 16)">
+    <rect width="292" height="108" rx="12" fill="#0C152B" stroke="#F43F5E" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 0 12 Q 0 0 12 0 L 280 0 Q 292 0 292 12 L 292 3 Z" fill="url(#gradRose)" />
+
+    <g transform="translate(16, 20)">
+      <text x="0" y="28" class="sans hud-num" font-size="34" fill="url(#gradRose)">0</text>
+      <!-- Shield Status Icon -->
+      <g transform="translate(196, 4)">
+        <polygon points="16,0 32,6 32,20 16,30 0,20 0,6" fill="#1E293B" stroke="#F43F5E" stroke-width="2" />
+        <path d="M 10 15 L 14 19 L 22 10" fill="none" stroke="#F43F5E" stroke-width="2.5" stroke-linecap="round" />
+      </g>
+
+      <text x="0" y="56" class="sans" font-size="13" font-weight="700" fill="#E2E8F0">Secret Leaks &amp; Drift</text>
+      <text x="0" y="74" class="mono" font-size="10.5" fill="#94A3B8">TruffleHog, tfsec &amp; Terratest</text>
+    </g>
+  </g>
+</svg>
+

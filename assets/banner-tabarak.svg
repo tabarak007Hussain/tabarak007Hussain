@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060913" />
+      <stop offset="50%" stop-color="#0A1128" />
+      <stop offset="100%" stop-color="#040711" />
+    </linearGradient>
+
+    <linearGradient id="cyberMesh" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.08" />
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#F43F5E" stop-opacity="0.06" />
+    </linearGradient>
+
+    <!-- Neon Text Gradients -->
+    <linearGradient id="nameGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+
+    <linearGradient id="badgeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+
+    <linearGradient id="terminalBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080F24" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#040714" stop-opacity="0.98" />
+    </linearGradient>
+
+    <!-- Ambient Glow Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#00F2FE" flood-opacity="0.15" />
+    </filter>
+
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.7" stroke-opacity="0.4" />
+    </pattern>
+  </defs>
+
+  <style>
+    .mono { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; }
+    .title { font-weight: 900; letter-spacing: -1.5px; }
+    .neon-pulse { animation: pulse 2s infinite ease-in-out; }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="380" rx="20" fill="url(#canvasBg)" stroke="#1E293B" stroke-width="1.5" />
+  <rect width="1200" height="380" rx="20" fill="url(#grid)" />
+  <rect width="1200" height="380" rx="20" fill="url(#cyberMesh)" />
+
+  <!-- Top Accent Beam -->
+  <path d="M 40 2 L 1160 2" stroke="url(#nameGradient)" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Top Status Bar -->
+  <g transform="translate(48, 36)">
+    <!-- Terminal Breadcrumb Pill -->
+    <rect width="360" height="28" rx="14" fill="#0E172E" stroke="#1E293B" stroke-width="1" />
+    <circle cx="16" cy="14" r="5" fill="#10B981">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="32" y="18" class="mono" font-size="11" fill="#38BDF8" font-weight="600">tabarak@cloud-ops:~/platform-core (main)</text>
+
+    <!-- Cloud Status Badge -->
+    <g transform="translate(850, 0)">
+      <rect width="254" height="28" rx="14" fill="#0E172E" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.5" />
+      <circle cx="14" cy="14" r="4" fill="#00F2FE" filter="url(#glowCyan)">
+        <animate attributeName="r" values="3.5;5;3.5" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <text x="26" y="18" class="mono" font-size="10.5" fill="#E2E8F0" font-weight="700" letter-spacing="0.5">AZURE CLOUD INFRASTRUCTURE</text>
+    </g>
+  </g>
+
+  <!-- ================= LEFT COLUMN: HERO INFORMATION ================= -->
+  <g transform="translate(48, 92)">
+    <!-- Professional Role Badge -->
+    <rect width="330" height="32" rx="8" fill="#0D1B3E" stroke="url(#badgeBorder)" stroke-width="1.2" />
+    <text x="14" y="21" class="mono" font-size="12" fill="#38BDF8" font-weight="700" letter-spacing="1.2">
+      ⚡ LEAD DEVSECOPS &amp; CLOUD ARCHITECT
+    </text>
+
+    <!-- Massive High-Impact Name -->
+    <text x="0" y="98" class="sans title" font-size="64" fill="url(#nameGradient)" filter="url(#glowCyan)">
+      Tabarak Hussain
+    </text>
+
+    <!-- Punchy Mission / Tagline -->
+    <text x="2" y="136" class="sans" font-size="18" font-weight="500" fill="#E2E8F0">
+      Enterprise Cloud Infrastructure • Zero-Trust Security • IaC Automation
+    </text>
+
+    <text x="2" y="162" class="sans" font-size="13.5" fill="#94A3B8" font-weight="400">
+      Automating resilient Azure platforms with Terraform, Terratest, Kubernetes (AKS), and FinOps governance.
+    </text>
+
+    <!-- Interactive Pillar Chips -->
+    <g transform="translate(2, 192)">
+      <!-- Chip 1: Azure -->
+      <g transform="translate(0, 0)">
+        <rect width="138" height="34" rx="17" fill="#0F172A" stroke="#0284C7" stroke-width="1.2" />
+        <text x="14" y="21" class="mono" font-size="11.5" fill="#38BDF8" font-weight="600">☁️ Azure Cloud</text>
+      </g>
+      <!-- Chip 2: Terraform -->
+      <g transform="translate(148, 0)">
+        <rect width="158" height="34" rx="17" fill="#0F172A" stroke="#7C3AED" stroke-width="1.2" />
+        <text x="14" y="21" class="mono" font-size="11.5" fill="#A78BFA" font-weight="600">⚙️ Terraform IaC</text>
+      </g>
+      <!-- Chip 3: Kubernetes -->
+      <g transform="translate(316, 0)">
+        <rect width="134" height="34" rx="17" fill="#0F172A" stroke="#2563EB" stroke-width="1.2" />
+        <text x="14" y="21" class="mono" font-size="11.5" fill="#60A5FA" font-weight="600">☸️ AKS / K8s</text>
+      </g>
+      <!-- Chip 4: DevSecOps -->
+      <g transform="translate(460, 0)">
+        <rect width="144" height="34" rx="17" fill="#0F172A" stroke="#10B981" stroke-width="1.2" />
+        <text x="14" y="21" class="mono" font-size="11.5" fill="#34D399" font-weight="600">🛡️ Zero-Trust CI</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT COLUMN: INTERACTIVE DEVSECOPS TERMINAL ================= -->
+  <g transform="translate(680, 88)" filter="url(#cardShadow)">
+    <!-- Terminal Outer Frame -->
+    <rect width="472" height="252" rx="12" fill="url(#terminalBg)" stroke="#1E293B" stroke-width="1.5" />
+
+    <!-- Terminal Title Bar -->
+    <path d="M 0 12 Q 0 0 12 0 L 460 0 Q 472 0 472 12 L 472 34 L 0 34 Z" fill="#0F172A" />
+    <circle cx="18" cy="17" r="5" fill="#EF4444" />
+    <circle cx="34" cy="17" r="5" fill="#F59E0B" />
+    <circle cx="50" cy="17" r="5" fill="#10B981" />
+    <text x="236" y="21" class="mono" font-size="11" fill="#64748B" font-weight="500" text-anchor="middle">pipeline-execution.sh — 80x24</text>
+
+    <!-- Terminal Code Stream -->
+    <g transform="translate(18, 56)">
+      <!-- Line 1: Command -->
+      <text x="0" y="0" class="mono" font-size="11.5" fill="#38BDF8" font-weight="600">$</text>
+      <text x="14" y="0" class="mono" font-size="11.5" fill="#E2E8F0">terraform apply -target=module.azure_landing_zone</text>
+
+      <!-- Line 2: Security Gate -->
+      <text x="0" y="26" class="mono" font-size="11.5" fill="#10B981" font-weight="700">✔</text>
+      <text x="18" y="26" class="mono" font-size="11.5" fill="#94A3B8">[Security]</text>
+      <text x="100" y="26" class="mono" font-size="11.5" fill="#E2E8F0">tfsec &amp; Checkov: 0 high/crit issues</text>
+
+      <!-- Line 3: Secrets -->
+      <text x="0" y="52" class="mono" font-size="11.5" fill="#10B981" font-weight="700">✔</text>
+      <text x="18" y="52" class="mono" font-size="11.5" fill="#94A3B8">[Sanitizer]</text>
+      <text x="100" y="52" class="mono" font-size="11.5" fill="#E2E8F0">TruffleHog: ZERO secrets detected</text>
+
+      <!-- Line 4: FinOps Gate -->
+      <text x="0" y="78" class="mono" font-size="11.5" fill="#38BDF8" font-weight="700">⚡</text>
+      <text x="18" y="78" class="mono" font-size="11.5" fill="#94A3B8">[FinOps]</text>
+      <text x="100" y="78" class="mono" font-size="11.5" fill="#38BDF8">Infracost delta: -$14,200/mo (-40%)</text>
+
+      <!-- Line 5: Terratest -->
+      <text x="0" y="104" class="mono" font-size="11.5" fill="#10B981" font-weight="700">✔</text>
+      <text x="18" y="104" class="mono" font-size="11.5" fill="#94A3B8">[Testing]</text>
+      <text x="100" y="104" class="mono" font-size="11.5" fill="#E2E8F0">Terratest Go: 24/24 suites passed</text>
+
+      <!-- Divider -->
+      <line x1="0" y1="124" x2="436" y2="124" stroke="#1E293B" stroke-width="1" />
+
+      <!-- Deployment Output -->
+      <text x="0" y="146" class="mono" font-size="11.5" fill="#10B981" font-weight="700">Apply complete! Resources: 48 added, 0 changed, 0 destroyed.</text>
+      
+      <!-- Live Indicator -->
+      <g transform="translate(0, 168)">
+        <circle cx="5" cy="5" r="4" fill="#10B981">
+          <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite" />
+        </circle>
+        <text x="16" y="8" class="mono" font-size="11" fill="#34D399" font-weight="600">Production Infrastructure State: SYNCHRONIZED</text>
+      </g>
+    </g>
+  </g>
+</svg>
+
